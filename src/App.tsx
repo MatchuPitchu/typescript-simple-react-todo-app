@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+// react-router-dom (don't needed in this project here) has first of all no type support;
+// solution: add npm i --save-dev @types/react-router-dom to gain type support and autocompletion inside Visual Studio Code
+// import { Router } from 'react-router-dom';
+
 import TodoList from './components/TodoList';
 import NewTodo from './components/NewTodo';
 import Todo from './todo.model'
