@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Simple React Todo App using TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is a little exercise I did to try TypeScript with React.
 
 ## Available Scripts
 

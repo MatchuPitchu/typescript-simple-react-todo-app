@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TodoList from './components/TodoList';
+import NewTodo from './components/NewTodo';
+import Todo from './todo.model'
 
-function App() {
+// use React.FC type for component
+const App: React.FC<{}> = () => {
+  // use Generic function to define structure of the state, 
+  // because in the beginning state is set to empty array, so TS doesn't know what's intended to be inside
+  const [todos, setTodos ]= useState<Todo[]>([]);
+
+  const todoAddHandler = (text: string) => {
+    setTodos(prev => [
+      ...prev,
+      { id: Math.random().toString(), text }
+    ])
+  }
+
+  const todoDeleteHandler = (todoId: string) => {
+    setTodos(prev => {
+      // adds item to returned array if function evaluates to true
+      return prev.filter(todo => todo.id !== todoId)
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NewTodo onAddTodo={todoAddHandler} />
+      <TodoList todos={todos} onDeleteTodo={todoDeleteHandler} />
     </div>
   );
 }
