@@ -2,6 +2,12 @@
 
 This app is a little exercise I did to try TypeScript with React.
 
+> Official React Docs: https://reactjs.org/docs/getting-started.html
+
+> More React Resources: https://academind.com/learn/react/
+
+> create-react-app + TypeScript Docs: https://create-react-app.dev/docs/adding-typescript/
+
 ## Available Scripts
 
 In the project directory, you can run:
