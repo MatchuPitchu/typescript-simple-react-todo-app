@@ -8,7 +8,7 @@ import NewTodo from './components/NewTodo';
 import Todo from './todo.model'
 
 // use React.FC type for component
-const App: React.FC<{}> = () => {
+const App: React.FC = () => {
   // use Generic function to define structure of the state, 
   // because in the beginning state is set to empty array, so TS doesn't know what's intended to be inside
   const [todos, setTodos ]= useState<Todo[]>([]);
